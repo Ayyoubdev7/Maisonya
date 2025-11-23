@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <link rel="icon" type="image/x-icon" href="assets/logo.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maisonya </title>
+    <meta name="description" content="Premium tools and hardware store with free delivery and quality products">
+    <link rel="stylesheet" href="Styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=:400,700&amp;display=swap">
+        <span>🔥 التوصـــــــــيل   بالمجـــــــان والدفــــــــــع عند الاستـــــــــــــلام   </span>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div id="goHome" class="logo" onclick="window.location.reload()">
+                <div class="logo-container">
+                    <img src="assets/logo.png" alt="Maisonya Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="logo-fallback" style="display: none;">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                </div>
+                <h1 class="site-title">Maisonya</h1>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="nav-link">الرئيسية</a></li>
+                    <li><a href="#products" class="nav-link">المنتجات</a></li>
+                    <li><a href="#deals" class="nav-link">العروض</a></li>
+                    <li><a href="#contact" class="nav-link">اتصل بنا</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button id="search-toggle" class="action-btn" onclick="toggleSearch()">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button id="wishlist-btn" class="action-btn" onclick="toggleWishlist()">
+                    <i class="far fa-heart"></i>
+                    <span id="wishlist-count" class="badge">0</span>
+                </button>
+                <button id="theme-toggle" class="action-btn" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="cart-btn" class="action-btn cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count" class="badge">0</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Search Bar (Hidden by default) -->
+        <div id="search-bar" class="search-container">
+            <input type="text" id="search-input" placeholder="ابحث عن منتجاتك... / Search for products..." onkeyup="searchProducts(this.value)">
+            <button id="search-close" class="search-close" onclick="toggleSearch()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="hero-title">
+                    <span class="gradient-text"> ✨✨ Maisonya  راحتك تبدأ من</span>
+                        <br>
+                    </h2>
+                    <p class="hero-subtitle">
+                        <i class="fas fa-truck"></i> كلشي ساهيل ...... و التوصيل مجاني و سريع
+                    </p>
+                    <p class="hero-description">
+                        <i class="fas fa-smile"></i> تسوق دابا....... و الباقي علينا
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="scrollToSection('products')">
+                            <i class="fas fa-shopping-bag"></i> تسوق الآن
+                        </button>
+                        <button class="btn btn-secondary" onclick="scrollToSection('deals')">
+                            <i class="fas fa-tag"></i> العروض
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="floating-card">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="feature-card">
+                <i class="fas fa-shipping-fast" style="color: rgb(177, 18, 18);"></i>
+                <h3>توصيل سريع</h3>
+                 
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt" style="color: chartreuse;"></i>
+                <h3>ضمان الجودة</h3>
+                 
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-headset"></i>
+                <h3>دعم 24/7</h3>
+                
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-undo" style="color: dodgerblue;"></i>
+                <h3>إرجاع سهل</h3>
+                
+            </div>
+        </section>
+
+        <!-- Products Section - YOUR ORIGINAL PRODUCTS -->
+        <section id="products" class="products">
+            <div class="section-header">
+                <h2 class="section-title">منتجاتنا المميزة</h2>
+            </div>
+
+            <div class="product-grid">
+                <!-- YOUR ORIGINAL PRODUCT 1 - Bosch Drill -->
+                <div class="product-card" data-name="Bosch Drill" data-price="199.99" data-category="power-tools">
+                    <div class="product-badges">
+                        <span class="badge-hot">ساخن</span>
+                        <span class="badge-discount">-20%</span>
+                    </div>
+                    <div class="product-image">
+                        <img src="assets/1.jpg" alt="Bosch Drill" loading="lazy" />
+                        <div class="product-overlay">
+                            <button class="quick-view-btn" onclick="quickView('Bosch Drill', '199.99', 'assets/1.jpg')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="wishlist-toggle" onclick="toggleWishlistItem(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Bosch Drill</h3>
+                        <p class="product-description">Professional power drill with advanced features</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(124)</span>
+                        </div>
+                        <p class="price">
+                            <span class="new-price">199.99 DH</span>
+                            <span class="old-price">250 DH</span>
+                        </p>
+                        <button class="add-to-cart" onclick="addToCartBtn('Bosch Drill', '199.99', 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop')">
+                            <i class="fas fa-shopping-cart"></i> أضف للسلة
+                        </button>
+                    </div>
+                </div>
+
+                <!-- YOUR ORIGINAL PRODUCT 2 - Electric Screwdriver -->
+                <div class="product-card" data-name="Electric Screwdriver" data-price="199.99" data-category="power-tools">
+                    <div class="product-badges">
+                        <span class="badge-new">جديد</span>
+                    </div>
+                    <div class="product-image">
+                        <img src="assets/2.jpg" alt="Electric Screwdriver" loading="lazy" />
+                        <div class="product-overlay">
+                            <button class="quick-view-btn" onclick="quickView('Electric Screwdriver', '199.99', 'assets/2.jpg')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="wishlist-toggle" onclick="toggleWishlistItem(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Electric Screwdriver</h3>
+                        <p class="product-description">Cordless screwdriver with long battery life</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(89)</span>
+                        </div>
+                        <p class="price">
+                            <span class="new-price">199.99 DH</span>
+                            <span class="old-price">250 DH</span>
+                        </p>
+                        <button class="add-to-cart" onclick="addToCartBtn('Electric Screwdriver', '199.99', 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&h=300&fit=crop')">
+                            <i class="fas fa-shopping-cart"></i> أضف للسلة
+                        </button>
+                    </div>
+                </div>
+
+                <!-- YOUR ORIGINAL PRODUCT 3 - Power Grinder -->
+                <div class="product-card" data-name="Power Grinder" data-price="199.99" data-category="power-tools">
+                    <div class="product-badges">
+                        <span class="badge-sale">عروض</span>
+                        <span class="badge-discount">-15%</span>
+                    </div>
+                    <div class="product-image">
+                        <img src="assets/smart-lamp.jpg" alt="Power Grinder" loading="lazy" />
+                        <div class="product-overlay">
+                            <button class="quick-view-btn" onclick="quickView('Power Grinder', '199.99', 'assets/smart-lamp.jpg')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="wishlist-toggle" onclick="toggleWishlistItem(this)">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Power Grinder</h3>
+                        <p class="product-description">High-performance angle grinder for professional use</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(156)</span>
+                        </div>
+                        <p class="price">
+                            <span class="new-price">199.99 DH</span>
+                            <span class="old-price">250 DH</span>
+                        </p>
+                        <button class="add-to-cart" onclick="addToCartBtn('Power Grinder', '199.99', 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop')">
+                            <i class="fas fa-shopping-cart"></i> أضف للسلة
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="load-more-container">
+                <button class="btn btn-outline" onclick="showNotification('جميع المنتجات المتاحة معروضة')">
+                    <i class="fas fa-check"></i> تم تحميل جميع المنتجات
+                </button>
+            </div>
+        </section>
+
+        <!-- Deals Section -->
+        <!-- <section id="deals" class="deals">
+            <div class="deals-header">
+                <h2 class="section-title">العروض الحصرية</h2>
+                <div class="deal-timer">
+                    <i class="fas fa-clock"></i>
+                    <span>ينتهي خلال:</span>
+                    <div id="countdown" class="countdown">
+                        <span class="time-block">00</span>
+                        <span class="time-separator">:</span>
+                        <span class="time-block">00</span>
+                        <span class="time-separator">:</span>
+                        <span class="time-block">00</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="deals-grid">
+                <div class="deal-card">
+                    <div class="deal-badge">-50%</div>
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=200&fit=crop" alt="Flash Deal">
+                    <h3>عرض اليوم</h3>
+                    <p>على جميع الأدوات الكهربائية</p>
+                    <button class="btn btn-danger" onclick="showNotification('تم تفعيل العرض! استمتع بالخصم')">
+                        <i class="fas fa-percentage"></i> استفد الآن
+                    </button>
+                </div>
+                <div class="deal-card">
+                    <div class="deal-badge">شراء 2 + 1 مجانا</div>
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=200&fit=crop" alt="Bundle Deal">
+                    <h3>عرض المجموعة</h3>
+                    <p>على مجموعات الأدوات اليدوية</p>
+                    <button class="btn btn-danger" onclick="showNotification('تم تفعيل العرض! أضف 3 منتجات للسلة')">
+                        <i class="fas fa-gift"></i> عرض التفاصيل
+                    </button>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>اشترك في نشرتنا البريدية</h2>
+                    <p>احصل على أحدث العروض والمنتجات الجديدة مباشرة في بريدك</p>
+                </div>
+                <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                    <input type="email" placeholder="بريدك الإلكتروني" required>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> اشترك الآن
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-tools"></i>
+                    <h3>Maisonya</h3>
+                </div>
+                <p>متخصصة في بيع أدوات البناء والصيانة عالية الجودة</p>
+                <div class="social-links">
+                    <a href="#" onclick="showNotification('سيتم فتح Facebook قريباً')">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" onclick="showNotification('سيتم فتح Instagram قريباً')">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" onclick="showNotification('سيتم فتح Twitter قريباً')">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" onclick="showNotification('سيتم فتح WhatsApp قريباً')">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="#home" onclick="scrollToSection('home')">الرئيسية</a></li>
+                    <li><a href="#products" onclick="scrollToSection('products')">المنتجات</a></li>
+                    <li><a href="#deals" onclick="scrollToSection('deals')">العروض</a></li>
+                    <li><a href="#contact" onclick="scrollToSection('contact')">اتصل بنا</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>المنتجات</h4>
+                <ul>
+                    <li><a href="#" onclick="showNotification('عرض الأدوات الكهربائية')">أدوات كهربائية</a></li>
+                    <li><a href="#" onclick="showNotification('عرض الأدوات اليدوية')">أدوات يدوية</a></li>
+                    <li><a href="#" onclick="showNotification('عرض معدات السلامة')">سلامة وأمان</a></li>
+                    <li><a href="#" onclick="showNotification('عرض الإضاءة')">إضاءة</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>معلومات الاتصال</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> +212 642 778 240</p>
+                    <p><i class="fas fa-envelope"></i> info@maisonya.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> المغرب</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Maisonya — Designed with ❤️ by AYOUBDEV7</p>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar - ENHANCED DESIGN -->
+    <aside id="cart-sidebar">
+        <div class="cart-header-enhanced">
+            <div class="cart-title-section">
+                <div class="cart-icon-wrapper">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cart-count-badge">0</span>
+                </div>
+                <div>
+                    <h2>سلة التسوق</h2>
+                    <p class="cart-subtitle">منتجاتك المختارة</p>
+                </div>
+            </div>
+            <button class="close-btn-enhanced" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-body-enhanced">
+            <div class="cart-items-container">
+                <ul id="cart-items"></ul>
+                <div class="cart-empty-enhanced" id="cart-empty" style="display: none;">
+                    <div class="empty-cart-animation">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <h3>سلتك فارغة</h3>
+                    <p>أضف بعض المنتجات الرائعة لبدء التسوق!</p>
+                    <button class="btn btn-outline btn-sm" onclick="toggleCart(); scrollToSection('products')">
+                        <i class="fas fa-plus"></i> إضافة منتجات
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="cart-footer-enhanced">
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>المجموع:</span>
+                    <span class="total-amount" id="cart-total">0.00 DH</span>
+                </div>
+                <div class="summary-row">
+                    <span>الكمية:</span>
+                    <span id="cart-quantity">0 قطع</span>
+                </div>
+            </div>
+            <div class="cart-actions">
+                <button class="btn btn-primary btn-block" onclick="openCheckout()">
+                    <i class="fas fa-credit-card"></i> إتمام الطلب
+                </button>
+                <button class="btn btn-outline btn-block" onclick="toggleCart()">
+                    <i class="fas fa-arrow-left"></i> متابعة التسوق
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Wishlist Sidebar - ENHANCED DESIGN -->
+    <aside id="wishlist-sidebar">
+        <div class="wishlist-header-enhanced">
+            <div class="wishlist-title-section">
+                <div class="wishlist-icon-wrapper">
+                    <i class="far fa-heart"></i>
+                    <span class="wishlist-badge" id="wishlist-count-badge">0</span>
+                </div>
+                <div>
+                    <h2>قائمتي المفضلة</h2>
+                    <p class="wishlist-subtitle">المنتجات التي تحبها</p>
+                </div>
+            </div>
+            <button class="close-btn-enhanced" onclick="toggleWishlist()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="wishlist-body-enhanced">
+            <div class="wishlist-items-container">
+                <ul id="wishlist-items"></ul>
+                <div class="wishlist-empty-enhanced" id="wishlist-empty" style="display: none;">
+                    <div class="empty-wishlist-animation">
+                        <i class="far fa-heart"></i>
+                    </div>
+                    <h3>قائمتك فارغة</h3>
+                    <p>احفظ المنتجات التي تحبها هنا!</p>
+                    <button class="btn btn-outline btn-sm" onclick="toggleWishlist(); scrollToSection('products')">
+                        <i class="fas fa-search"></i> تصفح المنتجات
+                    </button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Quick View Modal -->
+    <div id="quick-view-modal">
+        <div class="quick-view-content">
+            <button class="close-quick-view" onclick="closeQuickView()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="quick-view-body">
+                <div class="quick-view-image">
+                    <img id="quick-view-img" src="" alt="">
+                </div>
+                <div class="quick-view-info">
+                    <h3 id="quick-view-name"></h3>
+                    <p class="quick-view-description">منتج عالي الجودة مصمم للمهنيين والهواة على حد سواء</p>
+                    <div class="quick-view-price">
+                        <span id="quick-view-price"></span> DH
+                    </div>
+                    <div class="quick-view-features">
+                        <h4>المميزات:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> جودة عالية</li>
+                            <li><i class="fas fa-check"></i> ضمان سنة</li>
+                            <li><i class="fas fa-check"></i> توصيل مجاني</li>
+                        </ul>
+                    </div>
+                    <div class="quick-view-actions">
+                        <button class="btn btn-primary" onclick="addToCartFromQuickView()">
+                            <i class="fas fa-shopping-cart"></i> أضف للسلة
+                        </button>
+                        <button class="btn btn-outline" onclick="toggleWishlistQuickView()">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal">
+        <div class="checkout-content">
+            <div class="checkout-header">
+                <h2><i class="fas fa-credit-card"></i> إتمام الطلب</h2>
+                <button class="close-checkout" onclick="closeCheckout()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="checkout-form" onsubmit="handleCheckoutSubmit(event)">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> الاسم الكامل</label>
+                    <input type="text" id="cust-name" placeholder="أدخل اسمك الكامل" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-phone"></i> رقم الهاتف</label>
+                    <input type="tel" id="cust-phone" placeholder="أدخل رقم هاتفك" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-map-marker-alt"></i> العنوان</label>
+                    <input type="text" id="cust-address" placeholder="أدخل عنوانك الكامل" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-comment"></i> ملاحظات (اختياري)</label>
+                    <textarea id="cust-notes" placeholder="أي ملاحظات إضافية"></textarea>
+                </div>
+                <div class="checkout-summary">
+                    <h3>ملخص الطلب</h3>
+                    <div id="checkout-summary-items"></div>
+                    <div class="checkout-total">
+                        <strong>المجموع: <span id="checkout-total">0.00</span> DH</strong>
+                    </div>
+                </div>
+                <div class="checkout-actions">
+                    <button type="submit" class="btn btn-success btn-block">
+                        <i class="fas fa-paper-plane"></i> إرسال الطلب عبر WhatsApp
+                    </button>
+                    <button type="button" class="btn btn-outline btn-block" onclick="closeCheckout()">
+                        إلغاء
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" onclick="closeAllSidebars()"></div>
+
+    <!-- Success Notification -->
+    <div id="success-notification" class="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notification-message">تمت الإضافة بنجاح!</span>
+    </div>
+
+    <script src="Script.js"></script>
+    <!-- GitHub Pages Ready - No Backend Dependencies -->
+    <!-- Client data is securely handled via WhatsApp only -->
+</body>
+</html>
